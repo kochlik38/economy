@@ -9,18 +9,42 @@
 <body>
     <header>
         <h1>Biznesowa Symulacja</h1>
-        <p>Zbuduj swoje imperium i zostań liderem rynku!</p>
+        <p>Zarządzaj finansami, flotą i produkcją!</p>
     </header>
+
+    <aside>
+        <button onclick="showTab('factories')">🏭 Fabryki</button>
+        <button onclick="showTab('storage')">📦 Magazyny</button>
+        <button onclick="showTab('transport')">🚛 Transport</button>
+    </aside>
+
     <main>
-        <button onclick="startGame()">Rozpocznij grę</button>
-        <section id="info">
-            <h2>O grze</h2>
-            <p>Zarządzaj firmą, inwestuj, podejmuj strategiczne decyzje i rozwijaj swój biznes.</p>
+        <section id="factories">
+            <h2>🏭 Fabryki</h2>
+            <select id="factoryType">
+                <option value="kopalnia_zelaza">Kopalnia Żelaza - 300 000 PLN</option>
+                <option value="huta_stali">Huta Stali - 600 000 PLN</option>
+                <option value="plantacja">Plantacja - 200 000 PLN</option>
+            </select>
+            <button onclick="startBuilding()">Buduj Fabrykę</button>
+            <p id="buildingStatus"></p>
+            <ul id="ownedFactories"></ul>
+        </section>
+
+        <section id="storage">
+            <h2>📦 Magazyny</h2>
+            <ul id="siloStorage"></ul>
+            <ul id="industrialStorage"></ul>
+            <ul id="coldStorage"></ul>
+        </section>
+
+        <section id="transport">
+            <h2>🚛 Transport</h2>
+            <p>Ciężarówki chłodnie dostępne do przewozu:</p>
+            <ul id="chilledTrucks"></ul>
         </section>
     </main>
-    <footer>
-        <p>© 2025 Biznesowa Symulacja</p>
-    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
